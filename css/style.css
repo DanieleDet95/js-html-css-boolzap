@@ -49,6 +49,10 @@ body{
   margin-right: 20px;
 }
 
+.icone i:hover{
+  color: black;
+}
+
 /* Messaggio informazioni */
 .info{
   float: left;
@@ -72,11 +76,13 @@ body{
   display: inline-block;
   position: relative;
   min-width: 160px;
+  max-width: 60%;
   padding: 8px 10px 15px 10px;
   background: #d5f9ba;
   border-radius: 5px;
   margin-left: 100%;
   margin-bottom: 10px;
+  word-wrap: break-word;
 }
 
 .chat .orario{
@@ -92,11 +98,13 @@ body{
   display: inline-block;
   position: relative;
   min-width: 160px;
+  max-width: 60%;
   padding: 8px 10px 15px 10px;
   background: white;
   border-radius: 5px;
   margin-right: 100%;
   margin-bottom: 10px;
+  word-wrap: break-word;
 }
 
 /* Scrollbar */
@@ -293,6 +301,10 @@ body{
   border: none;
   border-radius: 5px;
   padding-left: 20px;
+}
+
+.bottom input:focus{
+  border: 2px solid purple;
 }
 
 /* Template */
