@@ -22,7 +22,7 @@ $(document).ready(
     $(document).on('click','.item-contatti',
       function(){
         $('.chat').addClass('hidden');
-        var index = parseInt($(this).attr('data-contact'));
+        index = parseInt($(this).attr('data-contact'));
         $('div[data-chat=' + index + ']').removeClass('hidden');
     });
 
@@ -30,17 +30,17 @@ $(document).ready(
     // ------------------------- Invio messaggio -------------------------------
     // Al click da tastiera invio,invia messaggio
     $('.bottom input').keydown(
-      function(event){
+      function(){
 
         if($('.bottom input').val().length > 0){
           if(event.which == 13){
             var orario = ora();
-            aggiungiMessaggioUtente(orario);
+            aggiungiMessaggioUtente(orario,index);
 
 
             setTimeout(function(){
               var orario = ora();
-              aggiungiMessaggioComputer(orario);
+              aggiungiMessaggioComputer(orario,index);
             }, 3000);
 
           }
@@ -54,11 +54,11 @@ $(document).ready(
 
         if($('.bottom input').val().length > 0){
           var orario = ora();
-          aggiungiMessaggioUtente(orario);
+          aggiungiMessaggioUtente(orario,index);
 
           setTimeout(function(){
             var orario = ora();
-            aggiungiMessaggioComputer(orario);
+            aggiungiMessaggioComputer(orario,index);
           }, 3000);
         }
 
@@ -78,28 +78,28 @@ $(document).ready(
 });
 
 // Funzione di inserimento messaggio utente
-function aggiungiMessaggioUtente(orario){
+function aggiungiMessaggioUtente(orario,index){
   var ora = $('.template .myMessage .orario')
   ora.append(orario);
   var bloccoMessaggio = $('.template .myMessage').clone();
   bloccoMessaggio.removeClass('nascosto');
   var messaggio = $('.bottom input').val();
   bloccoMessaggio.prepend(messaggio);
-  $('.wrapper').append(bloccoMessaggio);
+  $('div[data-chat=' + index + ']').children('.wrapper').append(bloccoMessaggio);
   $('.bottom input').val('');
   ora.text('');
   $('.chat').scrollTop($('.chat').height());
 }
 
 // Funzione di inserimento messaggio computer
-function aggiungiMessaggioComputer(orario){
+function aggiungiMessaggioComputer(orario,index){
   var ora = $('.template .otherMessage .orario')
   ora.append(orario);
   var bloccoMessaggio = $('.template .otherMessage').clone();
   bloccoMessaggio.removeClass('nascosto');
   var messaggio = 'Ok';
   bloccoMessaggio.prepend(messaggio);
-  $('.wrapper').append(bloccoMessaggio);
+  $('div[data-chat=' + index + ']').children('.wrapper').append(bloccoMessaggio);
   ora.text('');
   $('.chat').scrollTop($('.chat').height());
 }
