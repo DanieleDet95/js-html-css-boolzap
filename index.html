@@ -43,7 +43,7 @@
       <!-- Ricerca -->
       <div class="ricerca">
         <i class="fas fa-search"></i>
-        <input class="input-field" type="text" placeholder="Cerca o inizia una nuova chat">
+        <input type="text" placeholder="Cerca o inizia una nuova chat">
       </div>
 
       <!-- Contatti -->
@@ -51,7 +51,7 @@
         <ul>
 
           <!-- Contatto -->
-          <li class="item-contatti">
+          <li data-contact='1' class="item-contatti" name='DANIELE'>
             <a href="#"><div class="avatar">
               <img src="img/avatar_5.jpg" alt="avatar">
             </div>
@@ -67,7 +67,7 @@
           </li>
 
           <!-- Contatto -->
-          <li class="item-contatti">
+          <li data-contact='2' class="item-contatti" name='ANGELO'>
             <div class="avatar">
               <img src="img/avatar_2.jpg" alt="avatar">
             </div>
@@ -83,7 +83,7 @@
           </li>
 
           <!-- Contatto -->
-          <li class="item-contatti">
+          <li data-contact='3' class="item-contatti" name='SAVERIO'>
             <div class="avatar">
               <img src="img/avatar_7.jpg" alt="avatar">
             </div>
@@ -99,7 +99,7 @@
           </li>
 
           <!-- Contatto -->
-          <li class="item-contatti">
+          <li data-contact='4' class="item-contatti" name='MIRIAM'>
             <div class="avatar">
               <img src="img/avatar_io.jpg" alt="avatar">
             </div>
@@ -115,7 +115,7 @@
           </li>
 
           <!-- Contatto -->
-          <li class="item-contatti">
+          <li data-contact='5' class="item-contatti" name='STEFANO'>
             <div class="avatar">
               <img src="img/avatar_4.jpg" alt="avatar">
             </div>
@@ -131,7 +131,7 @@
           </li>
 
           <!-- Contatto -->
-          <li class="item-contatti">
+          <li data-contact='6' class="item-contatti" name='DONATO'>
             <div class="avatar">
               <img src="img/avatar_3.jpg" alt="avatar">
             </div>
@@ -147,7 +147,7 @@
           </li>
 
           <!-- Contatto -->
-          <li class="item-contatti">
+          <li data-contact='7' class="item-contatti" name='FRANCESCO'>
             <div class="avatar">
               <img src="img/avatar_1.jpg" alt="avatar">
             </div>
@@ -189,18 +189,159 @@
       </div>
 
       <!-- Chat -->
-      <div class="chat scroller">
+      <div data-chat='1' class="chat hidden scroller">
         <div class="wrapper">
           <div class="myMessage">
             <span>Ciao,come stai?</span>
             <span class="orario">17:30</span>
+            <span class="elimina"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+            <div class="bloccoElimina nascosto">
+              <span class="X">Elimina</span>
+            </div>
           </div>
           <div class="otherMessage">
             <span>Ciao,bene.. tu?</span>
             <span class="orario">17:30</span>
+            <span class="elimina"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+            <div class="bloccoElimina nascosto">
+              <span class="X">Elimina</span>
+            </div>
           </div>
         </div>
       </div>
+
+      <!-- Chat -->
+      <div data-chat='2' class="chat hidden scroller">
+        <div class="wrapper">
+          <div class="myMessage">
+            <span>Ciao,come stai?</span>
+            <span class="orario">17:30</span>
+            <span class="elimina"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+            <div class="bloccoElimina nascosto">
+              <span class="X">Elimina</span>
+            </div>
+          </div>
+          <div class="otherMessage">
+            <span>Ciao,male.. tu?</span>
+            <span class="orario">17:30</span>
+            <span class="elimina"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+            <div class="bloccoElimina nascosto">
+              <span class="X">Elimina</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chat -->
+      <div data-chat='3' class="chat hidden scroller">
+        <div class="wrapper">
+          <div class="myMessage">
+            <span>Ciao,come stai?</span>
+            <span class="orario">17:30</span>
+            <span class="elimina"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+            <div class="bloccoElimina nascosto">
+              <span class="X">Elimina</span>
+            </div>
+          </div>
+          <div class="otherMessage">
+            <span>Ciao,bene.. tu?</span>
+            <span class="orario">17:30</span>
+            <span class="elimina"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+            <div class="bloccoElimina nascosto">
+              <span class="X">Elimina</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chat -->
+      <div data-chat='4' class="chat hidden scroller">
+        <div class="wrapper">
+          <div class="myMessage">
+            <span>Ciao,come stai?</span>
+            <span class="orario">17:30</span>
+            <span class="elimina"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+            <div class="bloccoElimina nascosto">
+              <span class="X">Elimina</span>
+            </div>
+          </div>
+          <div class="otherMessage">
+            <span>Ciao,bene.. tu?</span>
+            <span class="orario">17:30</span>
+            <span class="elimina"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+            <div class="bloccoElimina nascosto">
+              <span class="X">Elimina</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chat -->
+      <div data-chat='5' class="chat hidden scroller">
+        <div class="wrapper">
+          <div class="myMessage">
+            <span>Ciao,come stai?</span>
+            <span class="orario">17:30</span>
+            <span class="elimina"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+            <div class="bloccoElimina nascosto">
+              <span class="X">Elimina</span>
+            </div>
+          </div>
+          <div class="otherMessage">
+            <span>Ciao,bene.. tu?</span>
+            <span class="orario">17:30</span>
+            <span class="elimina"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+            <div class="bloccoElimina nascosto">
+              <span class="X">Elimina</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chat -->
+      <div data-chat='6' class="chat hidden scroller">
+        <div class="wrapper">
+          <div class="myMessage">
+            <span>Ciao,come stai?</span>
+            <span class="orario">17:30</span>
+            <span class="elimina"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+            <div class="bloccoElimina nascosto">
+              <span class="X">Elimina</span>
+            </div>
+          </div>
+          <div class="otherMessage">
+            <span>Ciao,bene.. tu?</span>
+            <span class="orario">17:30</span>
+            <span class="elimina"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+            <div class="bloccoElimina nascosto">
+              <span class="X">Elimina</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chat -->
+      <div data-chat='7' class="chat hidden scroller">
+        <div class="wrapper">
+          <div class="myMessage">
+            <span>Ciao,come stai?</span>
+            <span class="orario">17:30</span>
+            <span class="elimina"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+            <div class="bloccoElimina nascosto">
+              <span class="X">Elimina</span>
+            </div>
+          </div>
+          <div class="otherMessage">
+            <span>Ciao,bene.. tu?</span>
+            <span class="orario">17:30</span>
+            <span class="elimina"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+            <div class="bloccoElimina nascosto">
+              <span class="X">Elimina</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
       <!-- Bottom -->
       <div class="bottom">
@@ -217,11 +358,19 @@
   <div class="template">
     <div class="myMessage nascosto">
       <span class="myText"></span>
-      <span class="orario">17:30</span>
+      <span class="orario"></span>
+      <span class="elimina"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+      <div class="bloccoElimina nascosto">
+        <span class="X">Elimina</span>
+      </div>
     </div>
     <div class="otherMessage nascosto">
       <span class="otherText"></span>
-      <span class="orario">17:30</span>
+      <span class="orario"></span>
+      <span class="elimina"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+      <div class="bloccoElimina nascosto">
+        <span class="X">Elimina</span>
+      </div>
     </div>
   </div>
 
