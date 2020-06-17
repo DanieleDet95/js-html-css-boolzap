@@ -2,28 +2,28 @@ $(document).ready(
   function(){
 
     // ------------------------- Ricerca contatti ------------------------------
-    $('.ricerca input').keydown(
+    $('.ricerca input').keyup(
       function(event){
 
         var input = $('.ricerca input').val();
         var nomeDaCercare = input.toUpperCase();
-        console.log(nomeDaCercare);
-        $(".item-contatti").fadeOut();
-        $(".item-contatti").each(function() {
-          console.log($(this).attr('name'));
+        $(".item-contatti").hide();
+        $(".item-contatti").each(
+          function() {
 
-          if($(this).attr('name^=' + nomeDaCercare')){
-            $(this).fadeIn();
-          }
-        });
-      });
+            if($(this).attr('name').includes(nomeDaCercare)){
+              $(this).show();
+            }
+          });
+    });
 
 
     // ---------------------------- Cambio Chat --------------------------------
-    $(document).on('click','.item-contatti', function(){
-      $('.chat').addClass('hidden');
-      var index = parseInt($(this).attr('data-contact'));
-      $('div[data-chat=' + index + ']').removeClass('hidden');
+    $(document).on('click','.item-contatti',
+      function(){
+        $('.chat').addClass('hidden');
+        var index = parseInt($(this).attr('data-contact'));
+        $('div[data-chat=' + index + ']').removeClass('hidden');
     });
 
 
