@@ -25,6 +25,11 @@ $(document).ready(
 
 
     // --------------------- Cambio Chat e info sopra --------------------------
+
+    // Chat visualizzata di defoult
+    var index = 1;
+    $('div[data-chat=' + index + ']').removeClass('hidden');
+
     // Al click dei contatti
     $(document).on('click','.item-contatti',
       function(){
@@ -54,20 +59,17 @@ $(document).ready(
     // Cambio icona microfono con l'invio messaggio
 
     // All'evento di input cliccato
-    $('.bottom input').focus(
-      function(){
-        $('.bottom .microfono').addClass('hidden');
-        $('.bottom .areoplano').removeClass('hidden');
-      }
-    );
-
-    // All'evento di input decliccato
-    $('.bottom input').blur(
-      function(){
-        $('.bottom .microfono').removeClass('hidden');
-        $('.bottom .areoplano').addClass('hidden');
-      }
-    );
+    $('.bottom input').keyup(
+      function(event){
+        if($('.bottom input').val().length > 0){
+          $('.bottom .microfono').addClass('hidden');
+          $('.bottom .areoplano').removeClass('hidden');
+        }
+        if($('.bottom input').val().length == 0) {
+          $('.bottom .microfono').removeClass('hidden');
+          $('.bottom .areoplano').addClass('hidden');
+        }
+      });
 
     // Al click da tastiera invio,invia messaggio
     $('.bottom input').keydown(
@@ -93,7 +95,6 @@ $(document).ready(
     $('.bottom .areoplano').click(
       function(){
 
-        alert('ciao');
         if($('.bottom input').val().length > 0){
           var orario = ora();
           aggiungiMessaggioUtente(orario,index);
@@ -137,9 +138,11 @@ function aggiungiMessaggioUtente(orario,index){
   // Inserire il template nella chat con l'indice dell'utente attivo
   $('div[data-chat=' + index + ']').children('.wrapper').append(bloccoMessaggio);
 
-  // Reset del messaggio e dell'ora
+  // Reset del messaggio, dell'ora e dell'icona
   $('.bottom input').val('');
   ora.text('');
+  $('.bottom .microfono').removeClass('hidden');
+  $('.bottom .areoplano').addClass('hidden');
 
   // Scroll della chat all'ultimo messaggio
   $('.chat').scrollTop($('.chat').height());
