@@ -145,7 +145,7 @@ function aggiungiMessaggioUtente(orario,index){
   $('.bottom .areoplano').addClass('hidden');
 
   // Scroll della chat all'ultimo messaggio
-  $('.chat').scrollTop($('.chat').height());
+  $('.chat').scrollTop($('.chat').prop('scrollHeight'));
 }
 
 // Funzione di inserimento messaggio computer
@@ -169,7 +169,7 @@ function aggiungiMessaggioComputer(orario,index){
   ora.text('');
 
   // Scroll della chat all'ultimo messaggio
-  $('.chat').scrollTop($('.chat').height());
+  $('.chat').scrollTop($('.chat').prop('scrollHeight'));
 }
 
 // Funzione restituisce orario
