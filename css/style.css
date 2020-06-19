@@ -7,6 +7,9 @@
 a{
   color: black;
 }
+li{
+  list-style: none;
+}
 
 /* Impostazione sfondo background */
 body{
@@ -51,6 +54,28 @@ body{
 
 .icone i:hover{
   color: black;
+}
+
+.temi{
+  position: absolute;
+  background: white;
+  top: 50px;
+  right: 5px;
+  z-index: 10;
+}
+
+.temi.hidden{
+  display: none;
+}
+
+.chiaro,
+.scuro{
+  padding: 5px;
+}
+
+.chiaro:hover,
+.scuro:hover{
+  background: #b1b1b1;
 }
 
 /* Messaggio informazioni */
@@ -281,6 +306,7 @@ body{
   width: 100%;
   height: 60px;
   border-bottom: 1px solid lightgray;
+  position: relative;
 }
 
 .contatti .item-contatti:hover{
@@ -288,9 +314,9 @@ body{
 }
 
 .contatti .orario{
-  position: relative;
-  bottom: 17px;
-  left: 70px;
+  position: absolute;
+  bottom: 30px;
+  right: 3px;
 }
 
 /* Impostazioni container left*/

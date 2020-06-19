@@ -80,10 +80,11 @@ $(document).ready(
             var orario = ora();
             aggiungiMessaggioUtente(orario,index);
 
-
+            $('.top .info .sotto-nome' ).text('Sta scrivendo..');
             setTimeout(function(){
               var orario = ora();
               aggiungiMessaggioComputer(orario,index);
+              $('.top .info .sotto-nome' ).text('Ultimo accesso oggi alle ' + orario + '');
             }, 3000);
 
           }
@@ -116,6 +117,55 @@ $(document).ready(
     $(document).on('click','.X', function(){
       $(this).parents('.myMessage').remove();
       $(this).parents('.otherMessage').remove();
+    });
+
+
+    // Cambio Tema
+    // Visualizzazione menu
+    $('#right .icone i.fa-ellipsis-v').click(
+      function(){
+
+        $('.icone .temi').toggleClass('hidden');
+
+    });
+
+    // Se clicco su chiaro
+    $('.icone .temi .chiaro').click(
+      function(){
+
+        $('.icone .temi').addClass('hidden');
+        $('.temi').css('background','white');
+        $('body').css('color','black');
+        $('.top').css('background','#eaeaea');
+        $('.notifiche').css('background','#8edafc');
+        $('.ricerca').css('background','#eaeaea');
+        $('.ricerca input').css('background','#eaeaea');
+        $('.ricerca input').css('color','black');
+        $('.item-contatti').css('background','#eaeaea');
+        $('.bottom').css('background','#eaeaea');
+        $('.item-contatti').css('background','#eaeaea');
+        $('.myMessage').css('background','#d5f9ba');
+        $('.otherMessage').css('background','	white');
+
+    });
+
+    // Se clicco su scuro
+    $('.icone .temi .scuro').click(
+      function(){
+
+        $('.icone .temi').addClass('hidden');
+        $('.temi').css('background','#25383C');
+        $('body').css('color','white');
+        $('.top').css('background','#25383C');
+        $('.notifiche').css('background','#151B54');
+        $('.ricerca').css('background','#25383C');
+        $('.ricerca input').css('background','#25383C');
+        $('.ricerca input').css('color','white');
+        $('.item-contatti').css('background','#25383C');
+        $('.bottom').css('background','#25383C');
+        $('.item-contatti').css('background','#25383C');
+        $('.myMessage').css('background','#254117');
+        $('.otherMessage').css('background','	#726E6D');
     });
 
 });
@@ -164,6 +214,9 @@ function aggiungiMessaggioComputer(orario,index){
 
   // Inserire il template nella chat con l'indice dell'utente attivo
   $('div[data-chat=' + index + ']').children('.wrapper').append(bloccoMessaggio);
+
+  // Aggiungere il messaggio sotto il contatto
+  $('li[data-contact='+ index +'].item-contatti .ultimoMex').text(messaggio);
 
   // Reset dell'ora
   ora.text('');
